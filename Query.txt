@@ -16,7 +16,7 @@
 
 	SELECT * 
 	FROM students
-	WHERE  ( YEAR(CURDATE()) - YEAR(date_of_birth) ) >= 30;
+	WHERE  ( YEAR(CURDATE()) - YEAR(date_of_birth) ) > 30;
 
 
 4.
@@ -77,9 +77,9 @@
 11.
 
 
-    SELECT `exam_id`, AVG(`vote`)
+    SELECT `exam_id` AS `esame`, ROUND(AVG(`vote`), 2 )
     FROM `exam_student`
-    GROUP BY `exam_id`;
+    GROUP BY `esame`;
 
 
 12.
